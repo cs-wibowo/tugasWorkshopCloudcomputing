@@ -1,0 +1,18 @@
+doctype 5
+html
+  head
+    title= 'Test jade'
+  body
+    table(border="1")
+      tr
+        td Nama
+        td umur
+        td jumlah
+      - var emp = [{nama: 'bobo', umur:12}, {nama: 'bowo', umur:17}, {nama: 'sakti', umur:24}]
+      - var i=0
+      each mp in emp
+        tr
+          td(id='row'+i) #{mp.nama}
+          td #{mp.umur}
+          td #{i}
+          - i=i+1

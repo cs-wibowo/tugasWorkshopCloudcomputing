@@ -1,0 +1,66 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	margin: 0;
+	padding: 0;
+	background: #474747;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #616161;
+}
+
+#wrapper {
+	margin: 0 auto; padding: 0;
+	width: 950px;
+}
+
+.box {
+	background-color: #222;
+	
+	border-radius : 7px; 
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	
+	box-shadow: 0px 2px 5px 1px #555;
+	-webkit-box-shadow: 0px 2px 5px 1px #555;
+	-moz-box-shadow: 0px 2px 5px 1px #555;
+}
+
+/*-------------HEADER-------------*/
+
+#header {
+	text-align:center;
+}
+
+#header h1 {
+	font: 70px Tahoma, Helvetica, Arial, Sans-Serif;
+	color: #222;
+	text-shadow: 0px 2px 3px #555;
+}
+
+/*-------------CONTENT-------------*/
+
+#content {
+}
+
+#box-nama {
+	margin: 0 auto; padding: 15px;
+	width:250px;
+	text-align:left; font-size:16px; font-weight:bold;
+}
+#box-nama table {
+	margin: 0 auto;
+}
+
+#content a {
+	display:block; width:250px;
+	margin: 30px auto; padding: 15px 20px;
+	
+	text-align:center; font-size:18px; font-weight:bold; text-decoration:none; color:#aaa;
+	text-shadow: 1px 1px 2px #333; 
+}
+#content a:hover {
+	color:#fe761b;
+	text-shadow: 0 0 10px #000;
+}

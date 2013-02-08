@@ -1,0 +1,118 @@
+@charset "utf-8";
+/* CSS Document */
+
+html { margin:0; padding:0; height:100%}
+
+body {
+	margin: 0;
+	padding: 0;
+	background: #FFFFFF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333333;
+}
+
+.wrapper {
+	margin: 0 auto; padding: 0;
+	width: 950px;
+}
+
+.span-btn {
+	display:inline-block;
+	margin: 2px; padding: 5px 9px;
+	
+	border: solid 1px #CCCCCC;
+	border-radius : 7px; 
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	
+	cursor:pointer;
+}
+
+.span-btn:hover {
+	background: linear-gradient(#fff 0%, #ddd 100%);
+	background: -moz-linear-gradient(#fff 0%, #ddd 100%);
+	background: -webkit-gradient(linear, color-stop(0%,#fff), color-stop(100%,#ddd));
+	background: -webkit-linear-gradient(#fff 0%, #ddd 100%);
+	background: -o-linear-gradient(#fff 0%, #ddd 100%);
+	background: -ms-linear-gradient(#fff 0%, #ddd 100%);
+}
+
+.span-btn:active {
+	background: linear-gradient(#ddd 0%, #fff 100%);
+	background: -moz-linear-gradient(#ddd 0%, #fff 100%);
+	background: -webkit-gradient(linear, color-stop(0%,#ddd), color-stop(100%,#fff));
+	background: -webkit-linear-gradient(#ddd 0%, #fff 100%);
+	background: -o-linear-gradient(#ddd 0%, #fff 100%);
+	background: -ms-linear-gradient(#ddd 0%, #fff 100%);
+}
+
+.edit, .delete {
+	margin: 0px 1px; padding: 3px;
+	border: solid 1px #FFF;
+	border-radius : 5px; 
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	
+	color:#999999;
+}
+.edit:hover, .delete:hover {
+	border: solid 1px #CCCCCC; color:#333333;
+}
+
+
+
+/*-------------HEADER-------------*/
+
+#header {
+	padding: 5px;
+	background: #474747;
+	border-bottom: 10px solid #333;
+	text-align:left;
+}
+
+#header h1 {
+	font: 35px Tahoma, Helvetica, Arial, Sans-Serif; line-height:75%;
+	color: #222;
+	text-shadow: 0px 2px 3px #555;
+}
+
+/*-------------CONTENT-------------*/
+
+#content {
+	padding-top: 20px;
+}
+
+#grid {
+	/*margin: 0 auto;*/
+	border:none;
+	border: solid 1px #CCCCCC; border-collapse: collapse;
+	
+}
+	#grid th {
+		padding: 9px 5px;
+		border-bottom: solid 1px #CCCCCC;
+		font-size:14px; font-weight:normal;
+		
+		
+		background: linear-gradient(#fff 0%, #ddd 100%);
+		background: -moz-linear-gradient(#fff 0%, #ddd 100%);
+		background: -webkit-gradient(linear, color-stop(0%,#fff), color-stop(100%,#ddd));
+		background: -webkit-linear-gradient(#fff 0%, #ddd 100%);
+		background: -o-linear-gradient(#fff 0%, #ddd 100%);
+		background: -ms-linear-gradient(#fff 0%, #ddd 100%);
+		
+	}
+	#grid td {
+		padding: 8px 5px;
+		border-bottom: solid 1px #ddd;
+		
+	}
+	
+	#form > form { margin: 0 auto; padding-top: 5px}
+	#form > h2 { padding-bottom:5px; width:100%; border-bottom: solid 1px #CCCCCC;}
+	#form-menu { padding-top:10px; border-top: solid 1px #CCCCCC;}
+
+.hiden {
+	display:none;
+}

@@ -1,0 +1,76 @@
+doctype 5
+html
+  head
+    title= 'Tugas Cloudcomputing'
+    link(rel='stylesheet', href='/stylesheets/crud.style.css')
+  body
+    #header
+      .wrapper
+        h1= 'Workshop Cloudcomputing'
+    
+    #content.wrapper
+      #list.hiden
+        span(id="create",class="span-btn")
+          | Create
+          | new
+        table(id="grid", width="100%", jumlah="3")
+          tr
+            th(width="100px", class="th-first") ID
+            th(width="*", align="left") Name
+            th(width="120px") Department
+            th(width="100px", align="right") Salary
+            th(width="120px", class="th-last") Action
+
+          - var i = 0
+          each emp in employees
+            tr(id="row"+i)
+              td(id="id"+i, align="center") #{emp.id}
+              td(id="name"+i) #{emp.name}
+              td(id="department"+i, align="center") #{emp.department}
+              td(id="salary"+i, align="right") #{emp.salary}
+              td(align="center")
+                span(id=""+i, class="edit span-btn") Edit
+                span(id=""+i, class="delete span-btn") Remove
+                - i = i + 1
+
+      #form.hiden
+        h2(id="titleForm") 'Create new employee data'
+        form
+          table(border='0', width='100%')
+            tr
+              td(width='80px') ID
+              td(width='*')
+                | :
+                input#fID(type='text', size='10')
+            tr
+              td Name
+              td
+                | :
+                input#fName(type='text', size='40')
+            tr
+              td Department
+              td
+                | :
+                select#fDepartment
+                  option(value='Accounting') Accounting
+                  option(value='Purchasing') Purchasing
+                  option(value='HRD') HRD
+                  option(value='Production') Production
+                  option(value='', selected='selected')
+            tr
+              td Salary
+              td
+                | :
+                input#fSalary(type='text', size='10')
+            tr
+              td &nbsp
+              td
+            tr
+              td#form-menu(colspan='2')
+                span#save.span-btn Save
+                span#cancel.span-btn Cancel
+                input#selectedID(type='hidden', value='')
+
+    script(type='text/javascript', src='/javascripts/socket.io.min.js')
+    script(type='text/javascript', src='/javascripts/jquery-1.7.2.min.js')
+    script(type='text/javascript', src='/javascripts/myscript.js')
