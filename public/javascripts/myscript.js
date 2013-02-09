@@ -22,32 +22,32 @@ $(document).ready(function() {
 	$('.delete').click(function() { removeItem($(this).attr('id')); });
 			
 	$('#save').click(function() {
-		var msg = "";
+		//var msg = "";
 
 		if($(this).text()=="Save"){ //CREATE
 	      	socket.emit('create', { id : $('#fID').val(), name : $('#fName').val(), department : $('#fDepartment').val(), salary : $('#fSalary').val() });
 	    	socket.on('REScreate', function (data) {
-	    		if (data == "success"){
+	    		//if (data == "success"){
 	    			var j = parseInt($('#grid').attr('jumlah'))+1; $('#grid').attr('jumlah',j);
 					$('#grid').append("<tr id='row"+j+"'><td id='id"+j+"'  align='center'>"+$('#fID').val()+"</td><td id='name"+j+"'>"+$('#fName').val()+"</td><td id='department"+j+"'  align='center'>"+$('#fDepartment').val()+"</td><td id='salary"+j+"'  align='right'>"+$('#fSalary').val()+"</td> <td align='center'><span id='"+j+"' class='edit span-btn' onclick=\"editItem(this.getAttribute('id'))\">Edit</span><span id='"+j+"' class='delete span-btn' onclick=\"removeItem(this.getAttribute('id'))\">Remove</span></td></tr>");
 	    			closeForm();
-	    		} else {
-	    			alert("Failed");
-	    		}
+	    		//} else {
+	    		//	alert("Failed");
+	    		//}
 	    	});
 			
 		} else { //UPDATE
 			socket.emit('update', { oldid: $('#id'+ $('#selectedID').val()).text() ,id : $('#fID').val(), name : $('#fName').val(), department : $('#fDepartment').val(), salary : $('#fSalary').val() });
 	    	socket.on('RESupdate', function (data) {
-	    		if (data == "success"){
+	    		//if (data == "success"){
 	    			$('#id'+ $('#selectedID').val()).text($('#fID').val());
 					$('#name'+ $('#selectedID').val()).text($('#fName').val());
 					$('#department'+ $('#selectedID').val()).text($('#fDepartment').val());
 					$('#salary'+ $('#selectedID').val()).text($('#fSalary').val());
 	    			closeForm();
-	    		} else {
-	    			alert("Failed");
-	    		}
+	    		//} else {
+	    		//	alert("Failed");
+	    		//}
 	    	});
 			
 		}	
@@ -76,14 +76,14 @@ function editItem(own) {
 function removeItem(own) {
 	var dlt=confirm("Remove employee : "+$('#name'+ own).text());
 	if (dlt==true){
-		var socket = io.connect('http://localhost');
-		socket.emit('remove', { id : $('#fID').val() });
+		var socket = io.connect('http://localhost'); //alert( $('#id'+own).text());
+		socket.emit('remove', { id : $('#id'+own).text() });
 	    socket.on('RESremove', function (data) {
-	    	if (data == "success"){
+	    	//if (data == "success"){
 	    		$('#row'+own).remove();
-	    	} else {
-	    		alert("Failed");
-	    	}
+	    	//} else {
+	    	//	alert("Failed");
+	    	//}
 	   	});
 	}
 }

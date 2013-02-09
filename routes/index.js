@@ -10,6 +10,7 @@ exports.index = function(req, res){
 /* CRUD : CReate Update Delete */
 
 var db = require("mongojs").connect("localhost/company", ["employees"]);
+//var db = require("mongojs").connect("/company", ["employees"]);
 
 exports.dbdisplay = function(req, res) {
 	db.employees.find(
@@ -42,11 +43,10 @@ exports.dbupdtae = function(data) {
 };
 
 exports.dbremove = function(data) {
-	db.employees.remove(
-		{ id : data.id }
-		, function(err , removed) {
+	db.employees.remove({ id : data.id }
+		/*, function(err , removed) {
 			if (err || !removed) return ("success");
 			else return ("Failed");
-		}
+		}*/
 	);
 };

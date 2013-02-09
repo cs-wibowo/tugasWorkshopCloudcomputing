@@ -32,10 +32,10 @@ app.configure('development', function(){
 app.get('/', routes.index);
 app.get('/crud', routes.dbdisplay);
 
-app.get('/socket.io/socket.io.js', function(req, res) {
+/*app.get('/socket.io/socket.io.js', function(req, res) {
   path.join(require('socket.io-client').dist, 'socket.io.min.js');
-  //path.join(__dirname, 'node_modules/socket.io-client/dist/socket.io.min.js')
-});
+  path.join(__dirname, 'node_modules/socket.io-client/dist/socket.io.min.js')
+});*/
 
 io.sockets.on('connection', function (socket) {
 
