@@ -3,6 +3,15 @@
  * Module dependencies.
  */
 
+// BLOCK START ---------------- mongo
+
+var port = (process.env.VMC_APP_PORT || 80);
+var host = (process.env.VCAP_APP_HOST || 'localhost');
+//var http = require('http');
+
+// BLOCK END ---------------- mongo
+
+
 var express = require('express')
   , app = express()
   , routes = require('./routes')

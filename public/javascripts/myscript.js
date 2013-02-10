@@ -9,7 +9,7 @@ $(document).ready(function() {
 		$('#fID').val('');
 		$('#fName').val('');
 		$('#fDepartment').val('');
-		$('#fSalary').val('');
+		$('#fSalary').val('');	
 				
 		$('#save').text("Save");
 		$('#selectedID').val("");
