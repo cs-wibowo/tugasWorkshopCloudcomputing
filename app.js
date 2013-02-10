@@ -40,15 +40,15 @@ app.get('/crud', routes.dbdisplay);
 io.sockets.on('connection', function (socket) {
 
   socket.on('create', function (data) {
-    socket.emit('REScreate', routes.dbcreate(data));
+    socket.emit('REScreate', { msg : routes.dbcreate(data) });
   });
 
   socket.on('update', function (data) {
-    socket.emit('RESupdate', routes.dbupdtae(data));
+    socket.emit('RESupdate', { msg : routes.dbupdtae(data) });
   });
 
   socket.on('remove', function (data) {
-    socket.emit('RESremove', routes.dbremove(data));
+    socket.emit('RESremove', { msg : routes.dbremove(data) });
   });
 
 });
