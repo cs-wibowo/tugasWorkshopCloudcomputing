@@ -1,7 +1,7 @@
 // JavaScript Document
 
 $(document).ready(function() {
-	var socket = io.connect('http://localhost');
+	var socket = io.connect('http://bw_tugascloudcomputing.cloudfoundry.com');
 
 	$('#list').fadeIn('slow');
 			
@@ -22,7 +22,6 @@ $(document).ready(function() {
 	$('.delete').click(function() { removeItem($(this).attr('id')); });
 			
 	$('#save').click(function() {
-		//var msg = "";
 
 		if($(this).text()=="Save"){ //CREATE
 	      	socket.emit('create', { id : $('#fID').val(), name : $('#fName').val(), department : $('#fDepartment').val(), salary : $('#fSalary').val() });
