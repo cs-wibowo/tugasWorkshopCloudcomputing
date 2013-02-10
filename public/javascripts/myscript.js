@@ -1,7 +1,7 @@
 // JavaScript Document
-
+var myhost = 'http://bw_tugascloudcomputing.cloudfoundry.com';
 $(document).ready(function() {
-	var socket = io.connect('http://bw_tugascloudcomputing.cloudfoundry.com');
+	var socket = io.connect(myhost);
 
 	$('#list').fadeIn('slow');
 			
@@ -75,7 +75,7 @@ function editItem(own) {
 function removeItem(own) {
 	var dlt=confirm("Remove employee : "+$('#name'+ own).text());
 	if (dlt==true){
-		var socket = io.connect('http://localhost'); //alert( $('#id'+own).text());
+		var socket = io.connect(myhost);
 		socket.emit('remove', { id : $('#id'+own).text() });
 	    socket.on('RESremove', function (data) {
 	    	//if (data.msg == "success"){
